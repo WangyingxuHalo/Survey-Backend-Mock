@@ -1,5 +1,6 @@
 const Mock = require('mockjs')
 const getQuestionList = require('./data/getQuestionList')
+const getComponentList = require('./data/getComponentList');
 
 const Random = Mock.Random
 
@@ -14,65 +15,12 @@ module.exports = [
                 data: {
                     id: Random.id(),
                     title: Random.ctitle(),
-                    componentList: [
-                        {
-                            fe_id: Random.id(),
-                            type: 'questionTitle',
-                            title: '标题',
-                            isHidden: false,
-                            isLocked: false,
-                            props: 
-                            {
-                                text: '一行标题',
-                                level: 1,
-                                isCenter: false
-                            }
-                        },
-                        {
-                            fe_id: Random.id(),
-                            type: 'questionInput',
-                            title: '输入框',
-                            isHidden: false,
-                            isLocked: false,
-                            props: {
-                                title: '你的姓名',
-                                placeholder: '请输入姓名...'
-                            }
-                        },
-                        {
-                            fe_id: Random.id(),
-                            type: 'questionInput',
-                            title: '输入框',
-                            isHidden: false,
-                            isLocked: false,
-                            props: {
-                                title: '你的职业',
-                                placeholder: '请输入你的职业...'
-                            }
-                        },
-                        {
-                            fe_id: Random.id(),
-                            type: 'questionParagraph',
-                            title: '段落',
-                            isHidden: false,
-                            isLocked: false,
-                            props: {
-                                text: '段落内容',
-                                isCenter: false
-                            }
-                        },
-                        {
-                            fe_id: Random.id(),
-                            type: 'questionInfo',
-                            title: '问卷信息',
-                            isHidden: false,
-                            isLocked: false,
-                            props: {
-                                title: '问卷信息',
-                                description: '问卷信息描述'
-                            }
-                        },
-                    ]
+                    desc: "问卷描述",
+                    js: "",
+                    css: "",
+                    isPublished: true,
+                    isDeleted: false,
+                    componentList: getComponentList()
                 }
             }
         }
